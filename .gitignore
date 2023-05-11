@@ -1,0 +1,16 @@
+# Ignore .NET Core and VSCode files
+bin/
+obj/
+.vscode/
+*.suo
+*.user
+*.csproj.user
+*.pidb
+*.resharper
+*resharper.user
+
+# Ignore Docker files
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.debug.yml
+.vsdbg/
