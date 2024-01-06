@@ -16,16 +16,10 @@ public class TestSha256 : TestCase {
 	}
 	public TestSha256 Run(int loopCount = 1000) {
 		StartBenchmarking();
-		RunTest(loopCount);
+		for (int i = 0; i < loopCount; i++) {
+			sha256.ComputeHash(data);
+		}
 		StopBenchmarking();
 		return this;
-	}
-	private byte[] RunTest(int loopCount)
-	{
-		byte [] result = new byte[0];
-		for (int i = 0; i < loopCount; i++) {
-			result = sha256.ComputeHash(data);
-		}
-		return result;
 	}
 }

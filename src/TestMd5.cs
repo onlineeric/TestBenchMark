@@ -15,16 +15,10 @@ public class TestMd5 : TestCase {
 	}
 	public TestMd5 Run(int loopCount = 1000) {
 		StartBenchmarking();
-		RunTest(loopCount);
+		for (int i = 0; i < loopCount; i++) {
+			md5.ComputeHash(data);
+		}
 		StopBenchmarking();
 		return this;
-	}
-	private byte[] RunTest(int loopCount)
-	{
-		byte [] result = new byte[0];
-		for (int i = 0; i < loopCount; i++) {
-			result = md5.ComputeHash(data);
-		}
-		return result;
 	}
 }
